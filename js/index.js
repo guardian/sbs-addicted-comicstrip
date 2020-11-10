@@ -14,5 +14,9 @@ import '../scss/main.scss';
                 tile.querySelector('.copy2').innerHTML = v.copy2;
             }
         });
+
+        document.querySelectorAll('p a').forEach(el => {
+            el.setAttribute('target', '_blank');
+        });
     })
 })();
