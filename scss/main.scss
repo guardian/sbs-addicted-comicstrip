@@ -24,6 +24,12 @@ body {
     font-family: $bodyFont;
 }
 
+a {
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 h1 {
     background-color: red;
     color: black;
@@ -32,8 +38,9 @@ h1 {
 }
 
 ul {
+    padding-bottom: 2rem;
     li {
-        padding: 2rem;
+        padding: 2rem 2rem 1rem;
     }
 
     @media screen and (min-width: $medium) {
@@ -49,7 +56,10 @@ ul {
         }
 
         li:nth-child(5) {
-            padding-top: 9rem;
+            padding-top: 6rem;
+            .copy {
+                padding: 1rem;
+            }
         }
         li:nth-child(6) {
             display: flex;
@@ -66,7 +76,40 @@ ul {
                 width: 60%;
             }
         }
+
+        li {
+            padding-bottom: 0;
+        }
+        li {
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(7),
+            &:nth-child(9),
+            &:nth-child(10) {
+                .copy {
+                    padding-top: 1rem;
+                }
+            }
+        }
+        li {
+            &:nth-child(7),
+            &:nth-child(8) {
+                margin-top: -4rem;
+            }
+        }
+                    
     }
+
+    @media screen and (min-width: 1200px) {
+        li {
+            &:nth-child(7),
+            &:nth-child(8) {
+                margin-top: -8rem;
+            }
+        }
+    }
+
 
 }
 
