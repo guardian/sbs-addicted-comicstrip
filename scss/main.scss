@@ -1,0 +1,200 @@
+@import "bulma";
+$medium: 768px;
+
+$headingFont: 'Guardian Headline Light';
+$bodyFont: 'TS3 Text Sans';
+@font-face {
+    font-family: $headingFont;
+    src: url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Light.woff2") format("woff2"),
+    url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Light.woff") format("woff"),
+    url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: $bodyFont;
+    src: url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Regular.woff2") format("woff2"),
+    url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Regular.woff") format("woff"),
+    url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Regular.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    font-family: $bodyFont;
+}
+
+h1 {
+    background-color: red;
+    color: black;
+    display: inline-block;
+    padding: 1rem;
+}
+
+ul {
+    li {
+        padding: 2rem;
+    }
+
+    @media screen and (min-width: $medium) {
+        display: flex;
+        flex-wrap: wrap;
+        
+        $tilew: 30 40 30 30 30 40 35 30 35 50 50;
+        @for $i from 1 through length($tilew) {
+        // @each $tile in $tilew {
+            li:nth-child(#{$i}) {
+                width: nth($tilew, $i) + 0%;
+            }
+        }
+
+        li:nth-child(5) {
+            padding-top: 9rem;
+        }
+        li:nth-child(6) {
+            display: flex;
+            flex-direction: column;
+            .svg {
+                order: 2;
+            }
+            .copy {
+                order: 1;
+            }
+        }
+        li:nth-child(11) {
+            .copy {
+                width: 60%;
+            }
+        }
+    }
+
+}
+
+
+li.copy {
+    display: flex;
+    .copy {
+        width: 50%;
+        max-width: 250px;
+    }
+
+    .svg {
+        width: 100%;
+    }
+
+    
+    &.left {
+        .copy {
+            order: 1;
+        }
+        .svg {
+            order: 2
+        }
+    }
+
+    &.top {
+        flex-direction: column;
+        .copy {
+            order: 1;
+            width: 100%;
+            max-width: none;
+        }
+        .svg {
+            order: 2
+        }        
+    }
+}
+
+
+@media screen and (min-width: $medium) {
+    .m-block {
+        display: block !important;
+    }
+    .pl0 {
+        padding-left: 0;
+    }
+    .pr0 {
+        padding-right: 0;
+    }
+    .w100 {
+        width: 100% !important;
+        max-width: none !important;
+    }
+}
+
+li:nth-child(1) {
+    .copy {
+        border-image: url('../assets/tile_1_btop.svg');
+        padding: 2rem;
+        border-image-slice: 30;
+        border-image-slice: calc(50 / 184 * 100%) calc(80 / 254 * 100%) fill;
+        border-image-width: 34px 75px;
+    }
+}
+
+li:nth-child(11) {
+    position: relative;
+
+    .copy {
+        border-image: url('../assets/tile_11_btop.svg');
+        padding: 2rem 2rem 6rem;
+        border-image-slice: 30;
+        border-image-slice: calc(50 / 214 * 100%) calc(80 / 164 * 100%) fill;
+        border-image-width: 44px 76px;
+        order: 1;
+    }
+    .copy2 {
+        order: 3;
+    }
+    @media screen and (max-width: $medium - 1px) {
+        .copy {
+            margin-left: 10%;
+
+        }
+    }    
+
+    display: flex;
+    flex-direction: column;
+    .svg {
+        order: 2;
+    }
+    @media screen and (min-width: $medium) {
+        display: block;
+
+        .copy {
+            position: absolute;
+            top: 40%;
+            left: 33%;
+            width: 50%;
+    
+            border-image: url('../assets/tile_11_bright.svg');
+            padding: 2rem 2rem 2rem 6rem;
+            border-image-slice: 30;
+            border-image-slice: calc(50 / 124 * 100%) calc(80 / 254 * 100%) fill;
+            border-image-width: 44px 76px;
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        .copy {
+            top: 30%;
+        }
+    }
+    @media screen and (min-width: 1600px) {
+        .copy {
+            top: 25%;
+        }
+    }
+}
+
+.vis-md {
+    display: none;
+}
+
+@media screen and (min-width: $medium) {
+    .vis-sm {
+        display: none;
+    }
+    .vis-md {
+        display: block;
+    }
+}
