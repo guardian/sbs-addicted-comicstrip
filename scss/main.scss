@@ -8,6 +8,7 @@
 // @import "bulma/sass/helpers/_all";
 // @import "bulma/sass/layout/_all";
 $medium: 768px;
+$primary-color: #212121;
 
 $headingFont: 'Guardian Headline Light';
 $bodyFont: 'TS3 Text Sans';
@@ -28,12 +29,18 @@ $bodyFont: 'TS3 Text Sans';
     font-style: normal;
 }
 
+
+::selection {
+    background: #ffe500;
+}
+
 body {
+    color: $primary-color;
     font-family: $bodyFont;
 }
 
 a {
-    color: black;
+    color: $primary-color;
     font-weight: bold;
     text-decoration: underline;
 }
@@ -81,7 +88,7 @@ ul {
         }
         li:nth-child(11) {
             .copy {
-                width: 60%;
+                width: 80%;
             }
         }
 
@@ -193,13 +200,13 @@ li:nth-child(11) {
         border-image-slice: calc(50 / 214 * 100%) calc(80 / 164 * 100%) fill;
         border-image-width: 44px 76px;
         order: 1;
+        margin-left: 10%;
     }
     .copy2 {
         order: 3;
     }
     @media screen and (max-width: $medium - 1px) {
         .copy {
-            margin-left: 10%;
 
         }
     }    
@@ -210,20 +217,20 @@ li:nth-child(11) {
         order: 2;
     }
     @media screen and (min-width: $medium) {
-        display: block;
+        // display: block;
 
-        .copy {
-            position: absolute;
-            top: 40%;
-            left: 33%;
-            width: 50%;
+        // .copy {
+        //     position: absolute;
+        //     top: 40%;
+        //     left: 33%;
+        //     width: 50%;
     
-            border-image: url('../assets/tile_11_bright.svg');
-            padding: 2rem 2rem 2rem 6rem;
-            border-image-slice: 30;
-            border-image-slice: calc(50 / 124 * 100%) calc(80 / 254 * 100%) fill;
-            border-image-width: 44px 76px;
-        }
+        //     border-image: url('../assets/tile_11_bright.svg');
+        //     padding: 2rem 2rem 2rem 6rem;
+        //     border-image-slice: 30;
+        //     border-image-slice: calc(50 / 124 * 100%) calc(80 / 254 * 100%) fill;
+        //     border-image-width: 44px 76px;
+        // }
     }
     @media screen and (min-width: 1200px) {
         .copy {
